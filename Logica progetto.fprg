@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="acer"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-12-19 05:13:47 "/>
+        <attribute name="created" value="YWNlcjtMQVBUT1AtMTdCRDJURzE7MjAyMy0xMi0xOTsiMDQ6MjE6MTcgIjsyNjAy"/>
+        <attribute name="edited" value="YWNlcjtMQVBUT1AtMTdCRDJURzE7MjAyMy0xMi0xOTsiMDU6MTM6NDcgIjsyOzI3MTY="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="motore, semaforo, f1, f2, f3, ScA, ScB" type="Boolean" array="False" size=""/>
+            <comment text="Carrello passa sulla prima fotocellula?"/>
+            <if expression="f1">
+                <then>
+                    <assign variable="motore" expression="accesoSu"/>
+                    <assign variable="ScA" expression="aperta"/>
+                    <assign variable="semaforo" expression="verde"/>
+                    <assign variable="motore" expression="spento"/>
+                    <if expression="f3 == false &amp;&amp; f2 == true">
+                        <then>
+                            <assign variable="ScA" expression="inChiusura"/>
+                            <assign variable="semaforo" expression="rosso"/>
+                            <assign variable="motore" expression="accesoGiu"/>
+                            <assign variable="ScB" expression="chiuso"/>
+                            <assign variable="motore" expression="spento"/>
+                        </then>
+                        <else/>
+                    </if>
+                    <comment text="carrello arrivato"/>
+                </then>
+                <else>
+                    <assign variable="semaforo" expression="rosso"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
