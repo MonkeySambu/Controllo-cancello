@@ -29,7 +29,7 @@ public class App {
         motore.setVersoM(true);
         System.out.println("Il motore è acceso, cancello in " + Motore.direzione(motore.getVersoM()));
         App.sleep(1);
-        System.out.flush();
+        System.out.println("");
         
         SC_A.setStatoFC(true);
         System.out.println("Cancello: APERTO");
@@ -43,8 +43,8 @@ public class App {
         f3.setStatoFC(true);
 
         App.sleep(5);
-        System.out.println("/033[H\033[2J");
-        System.out.flush();
+
+        System.out.println("");
 
         System.out.println("Il carrello arriva alla fotocellula 2");
         f2.setStatoFC(true);
@@ -68,6 +68,8 @@ public class App {
         f2.setStatoFC(false);
         SC_B.setStatoFC(true);
         motore.setStatoM(false);
+        System.out.println("");
+        sleep(2);
         System.out.println("Cancello: CHIUSO");
     }
 }
